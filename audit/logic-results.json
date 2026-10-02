@@ -1,0 +1,132 @@
+{
+  "thresholdCrossing": {
+    "claimed": 36,
+    "detected": 26,
+    "threshold": 10,
+    "alerts": []
+  },
+  "inventoryAfterVision": {
+    "analysis": {
+      "persons": 20,
+      "chairs": 2,
+      "timestamp": "2026-10-02T20:40:18.543Z",
+      "source": "coco-ssd"
+    },
+    "seating": {
+      "reviewStatus": "unreviewed",
+      "verifiedCount": null,
+      "reviewNote": "",
+      "id": "seating",
+      "name": "Training seats",
+      "icon": "chair",
+      "approved": 48,
+      "detected": 48,
+      "operability": "Unknown"
+    }
+  },
+  "offlineVision": {
+    "centre": {
+      "id": "TC-RJ-008",
+      "name": "Udaipur Hospitality Institute",
+      "city": "Udaipur",
+      "state": "Rajasthan",
+      "course": "Tourism & hospitality",
+      "claimed": 30,
+      "detected": 20,
+      "connection": "offline",
+      "capacity": 48,
+      "cameras": 3,
+      "source": "local-ai",
+      "updatedAt": "2026-10-02T20:40:18.545Z",
+      "inventory": [
+        {
+          "reviewStatus": "unreviewed",
+          "verifiedCount": null,
+          "reviewNote": "",
+          "id": "seating",
+          "name": "Training seats",
+          "icon": "chair",
+          "approved": 48,
+          "detected": null,
+          "operability": "Unknown"
+        },
+        {
+          "reviewStatus": "unreviewed",
+          "verifiedCount": null,
+          "reviewNote": "",
+          "id": "workbenches",
+          "name": "Workbenches",
+          "icon": "bench",
+          "approved": 8,
+          "detected": null,
+          "operability": "Unknown"
+        },
+        {
+          "reviewStatus": "unreviewed",
+          "verifiedCount": null,
+          "reviewNote": "",
+          "id": "computers",
+          "name": "Computer systems",
+          "icon": "computer",
+          "approved": 12,
+          "detected": null,
+          "operability": "Unknown"
+        },
+        {
+          "reviewStatus": "unreviewed",
+          "verifiedCount": null,
+          "reviewNote": "",
+          "id": "equipment",
+          "name": "Trade equipment",
+          "icon": "tool",
+          "approved": 4,
+          "detected": null,
+          "operability": "Unknown"
+        }
+      ],
+      "observedAt": "2026-10-02T20:40:18.545Z",
+      "reviewNotes": "",
+      "analysis": {
+        "persons": 20,
+        "chairs": 2,
+        "timestamp": "2026-10-02T20:40:18.545Z",
+        "source": "coco-ssd"
+      }
+    },
+    "overviewIncludes": true,
+    "reportSummary": {
+      "centreCount": 1,
+      "onlineCentreCount": 0,
+      "offlineCentreCount": 1,
+      "attendance": {
+        "claimedTotal": 30,
+        "observedTotal": 0,
+        "comparableClaimedTotal": 0,
+        "observedCentreCount": 0,
+        "unavailableCentreCount": 1,
+        "variance": null,
+        "observedRate": null
+      },
+      "infrastructure": null,
+      "reviews": null
+    },
+    "reportCentre": {
+      "id": "TC-RJ-008",
+      "name": "Udaipur Hospitality Institute",
+      "city": "Udaipur",
+      "state": "Rajasthan",
+      "course": "Tourism & hospitality",
+      "connection": "offline",
+      "source": "local-ai",
+      "updatedAt": "2026-10-02T20:40:18.545Z",
+      "observedAt": "2026-10-02T20:40:18.545Z",
+      "attendance": {
+        "claimed": 30,
+        "observed": null,
+        "comparableClaimed": 0,
+        "variance": null,
+        "observationAvailable": false
+      }
+    }
+  }
+}

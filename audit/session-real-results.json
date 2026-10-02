@@ -1,0 +1,36 @@
+{
+  "record": {
+    "id": "2105c2fa-efc8-401b-ac54-5dd7b664d72f",
+    "centreId": "TC-UP-001",
+    "centreName": "Pradhan Mantri Kaushal Kendra",
+    "claimed": 40,
+    "threshold": 3,
+    "sustainedSeconds": 15,
+    "source": "camera",
+    "startedAt": "2026-10-02T21:15:51.460Z",
+    "model": "COCO-SSD lite_mobilenet_v2",
+    "confidence": 0.5,
+    "samples": [
+      {
+        "elapsedMs": 251,
+        "persons": 0
+      },
+      {
+        "elapsedMs": 1440,
+        "persons": 0
+      },
+      {
+        "elapsedMs": 2599,
+        "persons": 0
+      }
+    ],
+    "endedAt": "2026-10-02T21:15:54.095Z",
+    "endReason": "completed",
+    "ackCount": 3,
+    "endSynced": true,
+    "reviewSynced": false
+  },
+  "errors": [],
+  "mobileOverflow": false,
+  "note": "Real COCO-SSD model; synthetic Chromium camera, not field accuracy validation."
+}

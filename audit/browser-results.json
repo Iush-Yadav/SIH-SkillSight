@@ -1,0 +1,108 @@
+{
+  "errors": [],
+  "failedRequests": [],
+  "pages": [
+    {
+      "name": "Overview",
+      "heading": "Good morning, Ananya.",
+      "overflow": false
+    },
+    {
+      "name": "Live monitor",
+      "heading": "Live monitor",
+      "overflow": false
+    },
+    {
+      "name": "Training centres",
+      "heading": "Training centres",
+      "overflow": false
+    },
+    {
+      "name": "Infrastructure",
+      "heading": "Infrastructure compliance",
+      "overflow": false
+    },
+    {
+      "name": "Alerts & review",
+      "heading": "Alerts & review",
+      "overflow": false
+    },
+    {
+      "name": "Reports",
+      "heading": "Reports",
+      "overflow": false
+    }
+  ],
+  "addCentre": {
+    "id": "TC-AUDIT-900",
+    "name": "Audit test centre",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "course": "IT training",
+    "capacity": 32,
+    "cameras": 0,
+    "claimed": 0,
+    "detected": null,
+    "connection": "offline",
+    "source": "manual-onboarding",
+    "updatedAt": "2026-10-02T20:41:10.115Z",
+    "observedAt": null,
+    "reviewNotes": "Audit only",
+    "inventory": [
+      {
+        "id": "seating",
+        "name": "Training seats",
+        "icon": "chair",
+        "approved": 0,
+        "detected": null,
+        "operability": "Unknown",
+        "verifiedCount": null,
+        "reviewStatus": "unreviewed",
+        "reviewNote": ""
+      },
+      {
+        "id": "workbenches",
+        "name": "Workbenches",
+        "icon": "bench",
+        "approved": 0,
+        "detected": null,
+        "operability": "Unknown",
+        "verifiedCount": null,
+        "reviewStatus": "unreviewed",
+        "reviewNote": ""
+      },
+      {
+        "id": "computers",
+        "name": "Computer systems",
+        "icon": "computer",
+        "approved": 0,
+        "detected": null,
+        "operability": "Unknown",
+        "verifiedCount": null,
+        "reviewStatus": "unreviewed",
+        "reviewNote": ""
+      },
+      {
+        "id": "equipment",
+        "name": "Trade equipment",
+        "icon": "tool",
+        "approved": 0,
+        "detected": null,
+        "operability": "Unknown",
+        "verifiedCount": null,
+        "reviewStatus": "unreviewed",
+        "reviewNote": ""
+      }
+    ]
+  },
+  "registerBeforeVision": 40,
+  "realModel": "ready",
+  "registerAfterVision": 0,
+  "realInference": {
+    "persons": 0,
+    "chairs": 0,
+    "timestamp": "2026-10-02T20:41:24.539Z",
+    "source": "coco-ssd"
+  },
+  "mobileOverflow": false
+}

@@ -1,0 +1,11 @@
+import * as a from '../src/appState.js';
+import { compileReport } from '../src/reports.js';
+import { writeFileSync } from 'node:fs';
+const findings={};
+let s=a.normalizeState(null);s.alerts=[];s.centers[1].claimed=36;s.centers[1].detected=27;
+s=a.simulateTick(s,()=>0);findings.thresholdCrossing={claimed:s.centers[1].claimed,detected:s.centers[1].detected,threshold:s.settings.mismatchThreshold,alerts:s.alerts};
+s=a.saveVision(s,s.centers[1].id,{persons:20,chairs:2,claimed:36,timestamp:new Date().toISOString()});findings.inventoryAfterVision={analysis:s.centers[1].analysis,seating:s.centers[1].inventory[0]};
+let offline=a.normalizeState(null);const c=offline.centers.find(c=>c.connection==='offline');offline=a.saveVision(offline,c.id,{persons:20,chairs:2,claimed:30,timestamp:new Date().toISOString()});
+const report=compileReport(offline,{type:'attendance',period:'7d',centreId:c.id,sections:{attendance:true,infrastructure:false,reviews:false}});
+findings.offlineVision={centre:offline.centers.find(x=>x.id===c.id),overviewIncludes:offline.centers.filter(c=>c.detected!==null).some(x=>x.id===c.id),reportSummary:report.summary,reportCentre:report.centers[0]};
+writeFileSync('audit/logic-results.json',JSON.stringify(findings,null,2));console.log(JSON.stringify(findings,null,2));

@@ -1,0 +1,148 @@
+[
+  {
+    "id": "c293786d-c6b8-4e7e-8b5b-680c0926cff1",
+    "centreId": "TC-UP-001",
+    "centreName": "Pradhan Mantri Kaushal Kendra",
+    "source": "camera",
+    "startedAt": "2026-10-02T21:13:34.561Z",
+    "claimed": 40,
+    "threshold": 3,
+    "sustainedSeconds": 5,
+    "model": "COCO-SSD lite_mobilenet_v2",
+    "confidence": 0.5,
+    "samples": [
+      {
+        "elapsedMs": 0,
+        "persons": 1
+      },
+      {
+        "elapsedMs": 1006,
+        "persons": 1
+      },
+      {
+        "elapsedMs": 2010,
+        "persons": 1
+      },
+      {
+        "elapsedMs": 3016,
+        "persons": 1
+      },
+      {
+        "elapsedMs": 4021,
+        "persons": 1
+      },
+      {
+        "elapsedMs": 5023,
+        "persons": 1
+      }
+    ],
+    "endedAt": "2026-10-02T21:13:39.911Z",
+    "endReason": "completed",
+    "summary": {
+      "elapsedMs": 5350,
+      "coveredMs": 5023,
+      "unknownMs": 327,
+      "coverage": 0.9388785046728972,
+      "observedPersonMinutes": 0.08371666666666666,
+      "claimedPersonMinutes": 3.3486666666666665,
+      "averagePresence": 1,
+      "firstAlertMs": 5023,
+      "needsReview": true
+    }
+  },
+  {
+    "id": "a8739f58-995f-491f-b9e3-0bcf6751d619",
+    "centreId": "TC-UP-001",
+    "centreName": "Pradhan Mantri Kaushal Kendra",
+    "source": "camera",
+    "startedAt": "2026-10-02T21:15:47.408Z",
+    "claimed": 40,
+    "threshold": 3,
+    "sustainedSeconds": 5,
+    "model": "COCO-SSD lite_mobilenet_v2",
+    "confidence": 0.5,
+    "samples": [
+      {
+        "elapsedMs": 0,
+        "persons": 1
+      },
+      {
+        "elapsedMs": 1001,
+        "persons": 1
+      },
+      {
+        "elapsedMs": 2002,
+        "persons": 1
+      },
+      {
+        "elapsedMs": 3007,
+        "persons": 1
+      },
+      {
+        "elapsedMs": 4013,
+        "persons": 1
+      },
+      {
+        "elapsedMs": 5019,
+        "persons": 1
+      }
+    ],
+    "endedAt": "2026-10-02T21:15:52.740Z",
+    "endReason": "completed",
+    "summary": {
+      "elapsedMs": 5332,
+      "coveredMs": 5019,
+      "unknownMs": 313,
+      "coverage": 0.941297824456114,
+      "observedPersonMinutes": 0.08365,
+      "claimedPersonMinutes": 3.346,
+      "averagePresence": 1,
+      "firstAlertMs": 5019,
+      "needsReview": true
+    },
+    "review": {
+      "note": "Reviewed test discrepancy; follow-up required.",
+      "reviewedAt": "2026-10-02T21:15:52.891Z",
+      "reviewer": "Local reviewer (not authenticated)"
+    }
+  },
+  {
+    "id": "2105c2fa-efc8-401b-ac54-5dd7b664d72f",
+    "centreId": "TC-UP-001",
+    "centreName": "Pradhan Mantri Kaushal Kendra",
+    "source": "camera",
+    "startedAt": "2026-10-02T21:15:51.460Z",
+    "claimed": 40,
+    "threshold": 3,
+    "sustainedSeconds": 15,
+    "model": "COCO-SSD lite_mobilenet_v2",
+    "confidence": 0.5,
+    "samples": [
+      {
+        "elapsedMs": 251,
+        "persons": 0
+      },
+      {
+        "elapsedMs": 1440,
+        "persons": 0
+      },
+      {
+        "elapsedMs": 2599,
+        "persons": 0
+      }
+    ],
+    "endedAt": "2026-10-02T21:15:54.095Z",
+    "endReason": "completed",
+    "summary": {
+      "elapsedMs": 2635,
+      "coveredMs": 2348,
+      "unknownMs": 287,
+      "coverage": 0.8910815939278938,
+      "observedPersonMinutes": 0,
+      "claimedPersonMinutes": 1.5653333333333332,
+      "averagePresence": 0,
+      "firstAlertMs": null,
+      "needsReview": false
+    }
+  }
+]
