@@ -1,0 +1,107 @@
+.panel.attendance-chart {
+  --ac-indigo: #354bce;
+  --ac-slate: #7783a5;
+  container: attendance / inline-size;
+  min-width: 0;
+  color: var(--ink, #17181d);
+  background: linear-gradient(150deg, #fff 50%, #fafaf5);
+  border: 1px solid var(--line, #e2e2dc);
+}
+
+.ac-header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 22px 22px 17px; }
+.ac-eyebrow { display: flex; align-items: center; gap: 7px; color: #78796f; font-size: 8px; font-weight: 700; letter-spacing: .15em; }
+.ac-eyebrow > span { width: 15px; height: 2px; background: var(--ac-indigo); }
+.ac-header h2 { margin: 9px 0 6px; font-family: var(--serif, Georgia, serif); font-size: 27px; font-weight: 500; line-height: 1.08; letter-spacing: -.045em; }
+.ac-header p { margin: 0; color: #777985; font-size: 10px; line-height: 1.5; }
+.ac-demo { padding: 5px 7px; color: #697057; border: 1px solid #dce1cd; border-radius: 3px; background: #f5f7ec; font-family: var(--mono, monospace); font-size: 8px; white-space: nowrap; }
+
+.ac-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 0 22px 13px; }
+.ac-segmented { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid #e9e9e2; border-radius: 6px; background: #f3f3ee; }
+.ac-segmented button { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 30px; padding: 0 11px; color: #71737c; border: 0; border-radius: 3px; background: transparent; cursor: pointer; font-size: 10px; transition: color .18s ease, background .18s ease, box-shadow .18s ease; }
+.ac-segmented button:hover { color: var(--ac-indigo); background: #eaece6; }
+.ac-segmented button[aria-pressed="true"] { color: var(--ac-indigo); background: #fff; box-shadow: 0 1px 4px #17181d0d; font-weight: 700; }
+.ac-mode { border-color: #e8eaf3; background: #f2f3f9; }
+.ac-legend { display: flex; align-items: center; gap: 13px; flex-wrap: wrap; padding: 0 22px 0; }
+.ac-series-toggle { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0; color: #6d7388; border: 0; background: transparent; font-size: 10px; cursor: pointer; }
+.ac-series-toggle.ac-observed { color: var(--ac-indigo); }
+.ac-series-toggle[aria-pressed="false"] { color: #8e9099; }
+.ac-series-toggle[aria-disabled="true"] { cursor: default; }
+.ac-series-swatch { display: inline-flex; align-items: center; justify-content: center; width: 13px; height: 13px; color: #fff; border: 1px solid #8792b3; border-radius: 3px; background: #8792b3; }
+.ac-observed .ac-series-swatch { border-color: var(--ac-indigo); background: var(--ac-indigo); }
+.ac-series-toggle[aria-pressed="false"] .ac-series-swatch { color: #8e9099; border-color: #caccd5; background: transparent; }
+.ac-axis-unit { margin-left: auto; color: #777985; font-family: var(--mono, monospace); font-size: 8px; }
+
+.ac-plot { min-width: 0; margin: 0 10px 0 8px; }
+.ac-svg { display: block; width: 100%; height: 212px; overflow: hidden; }
+.ac-grid line { stroke: #e6e7e3; stroke-width: 1; stroke-dasharray: 3 5; }
+.ac-grid text, .ac-time-label { fill: #767986; font-family: var(--mono, monospace); font-size: 9px; }
+.ac-selected-band { fill: #354bce05; }
+.ac-line { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.ac-line-reported { stroke: #929cb9; stroke-width: 2; stroke-dasharray: .009 .013; animation: ac-fade-in .8s ease both; }
+.ac-line-observed { stroke: var(--ac-indigo); stroke-width: 2.7; stroke-dasharray: 1; animation: ac-draw-line 1s cubic-bezier(.22,.61,.36,1) both; }
+.ac-area { animation: ac-fade-in 1.1s ease both; }
+.ac-crosshair { stroke: #aab2d0; stroke-width: 1; stroke-dasharray: 3 5; pointer-events: none; }
+.ac-marker { stroke-width: 2; transition: r .16s ease; pointer-events: none; }
+.ac-marker-reported { fill: #fff; stroke: #8994b4; }
+.ac-marker-observed { fill: var(--ac-indigo); stroke: #fff; }
+.ac-point-active .ac-marker-observed { stroke-width: 2.5; filter: drop-shadow(0 1px 3px #354bce40); }
+.ac-point-active .ac-time-label { fill: var(--ac-indigo); font-weight: 500; }
+.ac-point { cursor: pointer; outline: none; }
+.ac-hit-area { fill: transparent; stroke: transparent; stroke-width: 1.5; }
+.ac-point:focus-visible .ac-hit-area { fill: #354bce08; stroke: var(--ac-indigo); }
+.ac-bar { transform-box: fill-box; transform-origin: center bottom; animation: ac-grow-bar .65s cubic-bezier(.22,.61,.36,1) var(--ac-delay, 0ms) both; }
+.ac-empty { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; min-height: 212px; padding: 25px; text-align: center; }
+.ac-empty svg { color: #8d97bf; }
+.ac-empty strong { font-family: var(--serif, Georgia, serif); font-size: 19px; font-weight: 500; }
+.ac-empty span { color: #73747c; font-size: 11px; }
+
+.ac-details { margin: 0 22px 0; padding: 12px 0 13px; border-top: 1px solid #e3e5ef; }
+.ac-detail-heading { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; color: #7b7d85; font-size: 9px; }
+.ac-selected-time { padding: 3px 5px; color: var(--ac-indigo); border-radius: 2px; background: #eef0fc; font-family: var(--mono, monospace); font-size: 9px; }
+.ac-detail-context { margin-left: auto; color: #8b6939; }
+.ac-details dl { display: grid; grid-template-columns: .95fr .95fr 1.1fr; gap: 12px; margin: 12px 0 0; }
+.ac-details dl > div { min-width: 0; }
+.ac-details dl > div + div { padding-left: 14px; border-left: 1px solid #e5e6e2; }
+.ac-details dt { color: #777985; font-size: 9px; }
+.ac-details dt span { font-size: 8px; }
+.ac-details dd { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin: 3px 0 0; font-family: var(--serif, Georgia, serif); font-size: 28px; letter-spacing: -.045em; line-height: 1.2; overflow-wrap: anywhere; }
+.ac-detail-observed dd { color: var(--ac-indigo); }
+.ac-detail-variance dd { color: #946a32; }
+.ac-details dd small { color: #8a7b65; font-family: var(--mono, monospace); font-size: 9px; letter-spacing: -.03em; }
+
+.ac-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap; padding: 11px 22px 14px; border-top: 1px solid #e9e9e2; background: #f9f9f4; }
+.ac-footer > div { min-width: 0; }
+.ac-footer p { display: flex; align-items: center; gap: 5px; margin: 0 0 5px; color: #6f7280; font-size: 8px; line-height: 1.5; }
+.ac-footer p svg { flex: 0 0 auto; }
+.ac-footer > div > span { display: block; color: #7c7e87; font-size: 8px; line-height: 1.6; }
+.ac-footer .ac-omitted { color: #946a32; }
+.ac-report { display: inline-flex; align-items: center; gap: 7px; min-height: 32px; padding: 0; color: var(--ac-indigo); border: 0; background: transparent; font-size: 10px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+.ac-report svg { transition: transform .18s ease; }
+.ac-report:hover svg { transform: translateX(3px); }
+.attendance-chart button:focus-visible { outline: 2px solid var(--ac-indigo); outline-offset: 3px; }
+
+@keyframes ac-draw-line { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes ac-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ac-grow-bar { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+@container attendance (max-width: 420px) {
+  .ac-header { gap: 9px; padding: 18px 14px 14px; }
+  .ac-header h2 { font-size: 24px; }
+  .ac-header p { font-size: 9px; }
+  .ac-demo { font-size: 7px; }
+  .ac-toolbar { gap: 7px; padding: 0 14px 7px; }
+  .ac-segmented button { min-height: 33px; padding: 0 8px; font-size: 9px; }
+  .ac-legend { gap: 13px; padding-right: 14px; padding-left: 14px; }
+  .ac-series-toggle { min-height: 36px; }
+  .ac-details { margin-right: 14px; margin-left: 14px; }
+  .ac-details dl { gap: 6px; }
+  .ac-details dl > div + div { padding-left: 9px; }
+  .ac-details dd { font-size: 27px; }
+  .ac-details dt span { display: block; margin-top: 2px; font-size: 7px; }
+  .ac-detail-context { font-size: 8px; }
+  .ac-footer { padding-right: 14px; padding-left: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .attendance-chart *, .attendance-chart *::before, .attendance-chart *::after { animation: none !important; transition: none !important; }
+}
